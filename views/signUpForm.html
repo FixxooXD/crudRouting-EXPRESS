@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/output.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="src/app.js"></script>
+  <title>SignUP</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      /* background-color: #222; */
+      /* background-color: #EF9A9A; */
+    }
+
+    textarea:focus,
+    input:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="Container" class="flex justify-center w-full mt-28">
+    <div id="content" class="flex flex-col sm:w-96 w-5/6 h-5/11 mx-4 bg-white shadow-xl">
+      <div id="introPart" class="flex flex-col">
+        <div class="pt-2 pl-2"><span class="text-2xl font-semibold tracking-wide">Get Started</span></div>
+        <div class="pl-2"><span class="font-medium text-xs">Already have an account ?</span></div>
+        <div class="text-orange pl-2"><span>log in</span></div>
+      </div>
+      <div id="loginOptions" class="flex flex-row  justify-around mt-4">
+        <button id="googleLogin" class="flex items-center justify-center  border-2 w-32 h-8 rounded">
+          <i class="fa-brands fa-google text-sm"></i> <span class="ml-2">signup</span>
+        </button>
+        <button id="faceBookLogin" class="flex items-center justify-center w-32 h-8 border-2 rounded">
+          <i class="fa-brands fa-facebook-f text-sm"></i><span class="ml-2">sign up</span>
+        </button  >
+      </div>
+      <div class="flex justify-center mt-2 text-base ">Or</div>
+      <form class="flex flex-col px-8" action="">
+        <label class="flex flex-col " for="">Name
+          <div class="border-2 px-2 flex flex-row items-center h-10 rounded">
+            <i class="fa-regular fa-user"></i>
+            <input class="ml-2 w-96" type="text" required placeholder="Full Name" name="" id="name">
+          </div>
+        </label>
+        <label class="flex flex-col mt-3" for="">Email
+          <div class="border-2 px-2 px-2 flex flex-row items-center h-10 rounded">
+            <i class="fa-regular fa-envelope "></i>
+            <input  class="ml-2 w-96" type="email" placeholder="Email" required name="" id="email">
+        </label>
+    </div>
+    <label class="flex flex-col mt-3" for="">Password
+      <div class="border-2 px-2 px-2 flex flex-row items-center h-10 rounded">
+        <i class="fa-solid fa-lock "></i>
+        <input  class="ml-2 w-96" type="password" placeholder="Password" required name="" id="password">
+    </label>
+  </div>
+  <label class="flex flex-col mt-3" for="">Confirm Password
+    <div class="border-2 px-2 px-2 flex flex-row items-center h-10 rounded">
+      <i class="fa-solid fa-lock "></i>
+      <input  class="ml-2 w-96" placeholder="Confirm Password" type="password" required name="" id="confirmPassword">
+  </label>
+  </div>
+  <button type="submit" id="submitBtn" class="border-2 mt-6 mb-10 py-1 rounded">Submit</button>
+  </form>
+  </div>
+  </div>
+</body>
+
+</html>
