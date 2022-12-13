@@ -1,16 +1,26 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const dotEnv = require('dotenv')
+const path = require("path");
+const dotEnv = require("dotenv");
+// const userRouter = require('./routers/userSignup');
 
-app.get('/', function (req, res) {
-  res.sendFile('views/index.html',{root:__dirname})
-})
+app.get("/", function (req, res) {
+  res.sendFile("public/views/index.html", { root: __dirname });
+});
+app.use(express.static("public"));
 
-app.listen(3000,(err)=>{
-    if(err){
-        console.log(err);
-    }
-    else{
-        console.log("server is listening at port 3000")
-    }
-})
+app.get("/signup", function (req, res) {
+  console.log(__dirname);
+  //  res.sendFile('views/signUpForm.html', {root:__dirname})
+  res.sendFile(path.join(__dirname, "public/views/signUpForm.html"));
+});
+
+// app.get("/user",userRouter)
+
+app.listen(3000, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("server is listening at port 3000");
+  }
+});
