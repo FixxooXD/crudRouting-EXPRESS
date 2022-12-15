@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const dotEnv = require("dotenv");
+// const dotEnv = require("dotenv");
 // const userRouter = require('./routers/userSignup');
 
 app.get("/", function (req, res) {

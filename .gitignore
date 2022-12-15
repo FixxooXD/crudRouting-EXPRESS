@@ -1,4 +1,4 @@
 node_modules
 # public/src/output.css
 public/src/build.css
-
+models/.env
