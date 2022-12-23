@@ -46,29 +46,29 @@
         </button  >
       </div>
       <div class="flex justify-center mt-2 text-base ">Or</div>
-      <form target="_blank"  class="flex flex-col px-8" action="/response">
+      <form  class="flex flex-col px-8" method="post" action="/signup">
         <label class="flex flex-col " for="">Name
           <div class="border-2 px-2 flex flex-row items-center h-10 rounded">
             <i class="fa-regular fa-user"></i>
-            <input class="ml-2 w-96" type="text" required placeholder="Full Name" name="" id="name">
+            <input class="ml-2 w-96" type="text" required placeholder="Full Name" name="name" id="name">
           </div>
         </label>
         <label class="flex flex-col mt-3" for="">Email
           <div class="border-2 px-2 px-2 flex flex-row items-center h-10 rounded">
             <i class="fa-regular fa-envelope "></i>
-            <input  class="ml-2 w-96" type="email" placeholder="Email" required name="" id="email">
+            <input  class="ml-2 w-96" type="email" placeholder="Email" required name="email" id="email">
         </label>
     </div>
     <label class="flex flex-col mt-3" for="">Password
       <div class="border-2 px-2 px-2 flex flex-row items-center h-10 rounded">
         <i class="fa-solid fa-lock "></i>
-        <input  class="ml-2 w-96" type="password" placeholder="Password" required name="" id="password">
+        <input  class="ml-2 w-96" type="password" placeholder="Password" required name="password" id="password">
     </label>
   </div>
   <label class="flex flex-col mt-3" for="">Confirm Password
     <div class="border-2 px-2 px-2 flex flex-row items-center h-10 rounded">
       <i class="fa-solid fa-lock "></i>
-      <input  class="ml-2 w-96" placeholder="Confirm Password" type="password" required name="" id="confirmPassword">
+      <input  class="ml-2 w-96" placeholder="Confirm Password" type="password" required name="confirmPassword" id="confirmPassword">
   </label>
   </div>
   <button type="submit" id="submitBtn" class="border-2 mt-6 mb-10 py-1 rounded">Submit</button>

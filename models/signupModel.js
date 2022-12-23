@@ -1,19 +1,26 @@
-const moongoose = require("moongoose");
-require('dotenv').config();
+// const mongoose = require("mongoose");
+// require('dotenv').config();
 
 // MongoDB LINK
-const db_link =process.env.DB_link;
+// const db_link =process.env.DB_link;
 // console.log(db_link)
-moongoose
+const mongoose = require("mongoose");
+
+// MongoDB
+
+const db_link =
+  "mongodb+srv://FixxooXD:7377978554@cluster0.volhtjz.mongodb.net/?retryWrites=true&w=majority";
+  mongoose.set('strictQuery', false);
+  mongoose
   .connect(db_link)
   .then((db) => {
-    console.log("db Connected");
+    console.log("db connected");
   })
   .catch((err) => {
     console.log(err);
   });
 
-const userSchema = moongoose.Schema({
+const userSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -22,29 +29,29 @@ const userSchema = moongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    validate: function () {
-      return emailValidator.validate(this.email);
-    },
+    // validate:function(){
+        // return emailValidator.validate(this.email)
+    // }
   },
   password: {
     type: String,
     required: true,
-    minLength: 8,
+    minLength:8
   },
   confirmPassword: {
     type: String,
     required: true,
-    minLength: 8,
-    validate: function () {
-      return this.confirmPassword == this.password;
-    },
+    minLength:8,
+    validate:function(){
+      return this.confirmPassword == this.password
+    }
   },
 });
 
 // removing confirmPassword before saving it into the database
-userSchema.pre("save", function () {
-  this.confirmPassword = undefined;
-});
+userSchema.pre('save',function(){
+    this.confirmPassword = undefined;
+})
 
 // model
 const userModel = mongoose.model("userModel", userSchema);
