@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(express.static("public"));
 
-app.get("/", function (req, res) {
+app.use("/", function (req, res) {
   res.sendFile("public/views/index.html", { root: __dirname });
 });
 
