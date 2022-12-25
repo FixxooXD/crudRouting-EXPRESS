@@ -78,24 +78,6 @@ connectDB().then(() => {
 //   })
 
 
-
-
-
-// // app.get("/user",userRouter)
-// mongoose.set('strictQuery', false);
-// mongoose
-// .connect(db_link)
-// .then((db) => {
-//   console.log("db connected");
-// })
-// .then(app.listen(port, () => {
-//   console.log("listening for requests");
-// }))
-// .catch((err) => {
-//   console.log(err);
-// });
-
-
 // client.connect(err => {
 //   if(err){ console.error(err); return false;}
 //   // connection to mongo is successful, listen for requests
