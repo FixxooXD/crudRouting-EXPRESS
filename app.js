@@ -59,11 +59,13 @@ const connectDB = async () => {
   }
 }
 
-connectDB().then(() => {
+connectDB()
+.then(() => {
+  console.log("DB Connected")
+})
   app.listen(port, () => {
       console.log("listening for requests");
   })
-})
 
 
 
