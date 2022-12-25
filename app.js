@@ -11,11 +11,23 @@ const mongoose = require("mongoose");
 
 // const db_link = process.env.DB_link;
 
+const connectDB = async () => {
+  try {
+    mongoose.set('strictQuery', false);
+    const conn = await mongoose.connect(process.env.db_link);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
+
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
+
   res.sendFile("public/views/index.html", { root: __dirname });
 });
 
@@ -47,17 +59,15 @@ app.get("/response", function(req, res){
   res.sendFile(path.join(__dirname, "public/views/submitResponse.html"))
 })
 
+//Connect to the database before listening
+connectDB().then(() => {
+  app.listen(port, () => {
+      console.log("listening for requests");
+  })
+})
 
-// const connectDB = async () => {
-//   try {
-//     mongoose.set('strictQuery', false);
-//     const conn = await mongoose.connect(process.env.db_link);
-//     console.log(`MongoDB Connected: ${conn.connection.host}`);
-//   } catch (error) {
-//     console.log(error);
-//     process.exit(1);
-//   }
-// }
+
+
 
 // connectDB()
 // .then(() => {
@@ -95,10 +105,10 @@ app.get("/response", function(req, res){
 // });
 
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("server is listening at port 3000");
-  }
-});
+// app.listen(port, (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("server is listening at port 3000");
+//   }
+// });
