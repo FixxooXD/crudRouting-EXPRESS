@@ -1,15 +1,17 @@
 // const mongoose = require("mongoose");
-// require('dotenv').config();
+require('dotenv').config();
 
 // MongoDB LINK
-// const db_link =process.env.DB_link;
+const db_link = process.env.DB_link;
 // console.log(db_link)
 const mongoose = require("mongoose");
-
+mongoose.set('strictQuery', false);
+mongoose
+.connect(db_link)
+.then((db) => {
+  console.log("db connected");
+})
 // MongoDB
-
-const db_link =
-  "mongodb+srv://FixxooXD:7377978554@cluster0.volhtjz.mongodb.net/?retryWrites=true&w=majority";
 
 const userSchema = mongoose.Schema({
   name: {

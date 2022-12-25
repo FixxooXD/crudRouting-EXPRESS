@@ -2,14 +2,14 @@ const express = require("express");
 const app = express();
 const path = require("path");
 // const port = process.env.PORT || 3000;
-const port = process.env.PORT || 3000;
+const port = 3000;
 const userModel = require("./models/signupModel");
 var bodyParser = require('body-parser');
 const { model } = require("mongoose");
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-const db_link = process.env.DB_link;
+// const db_link = process.env.DB_link;
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -48,24 +48,24 @@ app.get("/response", function(req, res){
 })
 
 
-const connectDB = async () => {
-  try {
-    mongoose.set('strictQuery', false);
-    const conn = await mongoose.connect(process.env.db_link);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-}
+// const connectDB = async () => {
+//   try {
+//     mongoose.set('strictQuery', false);
+//     const conn = await mongoose.connect(process.env.db_link);
+//     console.log(`MongoDB Connected: ${conn.connection.host}`);
+//   } catch (error) {
+//     console.log(error);
+//     process.exit(1);
+//   }
+// }
 
-connectDB()
-.then(() => {
-  console.log("DB Connected")
-})
-  app.listen(port, () => {
-      console.log("listening for requests");
-  })
+// connectDB()
+// .then(() => {
+//   console.log("DB Connected")
+// })
+//   app.listen(port, () => {
+//       console.log("listening for requests");
+//   })
 
 
 
@@ -95,10 +95,10 @@ connectDB()
 // });
 
 
-// app.listen(port, (err) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log("server is listening at port 3000");
-//   }
-// });
+app.listen(port, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("server is listening at port 3000");
+  }
+});
