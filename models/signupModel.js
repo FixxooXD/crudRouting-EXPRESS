@@ -10,15 +10,6 @@ const mongoose = require("mongoose");
 
 const db_link =
   "mongodb+srv://FixxooXD:7377978554@cluster0.volhtjz.mongodb.net/?retryWrites=true&w=majority";
-  mongoose.set('strictQuery', false);
-  mongoose
-  .connect(db_link)
-  .then((db) => {
-    console.log("db connected");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 const userSchema = mongoose.Schema({
   name: {

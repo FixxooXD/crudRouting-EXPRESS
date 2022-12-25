@@ -6,6 +6,10 @@ const port = process.env.port || 3000;
 const userModel = require("./models/signupModel");
 var bodyParser = require('body-parser');
 const { model } = require("mongoose");
+require("dotenv").config();
+const mongoose = require("mongoose");
+
+const db_link = process.env.DB_link;
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -43,12 +47,56 @@ app.get("/response", function(req, res){
   res.sendFile(path.join(__dirname, "public/views/submitResponse.html"))
 })
 
-// app.get("/user",userRouter)
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("server is listening at port 3000");
+const connectDB = async () => {
+  try {
+    mongoose.set('strictQuery', false);
+    const conn = await mongoose.connect(process.env.db_link);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
   }
-});
+}
+
+connectDB().then(() => {
+  app.listen(port, () => {
+      console.log("listening for requests");
+  })
+})
+
+
+
+
+
+// // app.get("/user",userRouter)
+// mongoose.set('strictQuery', false);
+// mongoose
+// .connect(db_link)
+// .then((db) => {
+//   console.log("db connected");
+// })
+// .then(app.listen(port, () => {
+//   console.log("listening for requests");
+// }))
+// .catch((err) => {
+//   console.log(err);
+// });
+
+
+// client.connect(err => {
+//   if(err){ console.error(err); return false;}
+//   // connection to mongo is successful, listen for requests
+//   app.listen(PORT, () => {
+//       console.log("listening for requests");
+//   })
+// });
+
+
+// app.listen(port, (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("server is listening at port 3000");
+//   }
+// });
