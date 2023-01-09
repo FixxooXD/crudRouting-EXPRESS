@@ -33,6 +33,11 @@ app.get("/", function (req, res) {
   res.sendFile("public/views/index.html", { root: __dirname });
 });
 
+// login page route
+app.get("/login", function(req,res){
+  res.sendFile("public/views/login.html", { root: __dirname })
+})
+
 // signup route middleware for info check
 app.get("/signup", function (req, res, next) {
   console.log(req.url);
