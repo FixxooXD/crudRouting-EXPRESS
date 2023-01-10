@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
-</head>
-<body>
-    <div class="main-container">
-        <form action="">
-            <label for="">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="text" name="email" placeholder="email" id="">
-            </label>
-        </form>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../src/output.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="border-2 h-screen flex flex-col justify-center items-center">
+      <div class="border-2 w-1/2">
+        <div class="flex justify-center items-center text-4xl p-2">Login</div>
+        <div class="border-2 flex flex-col">
+          <label for="">
+            <div>E-mail</div>
+            <input type="text" class="border-2" name="" id="" />
+          </label>
+          <label for="">
+            <div>Password</div>
+            <input type="text" class="border-2" name="" id="" />
+          </label>
+        </div>
+        <div class="flex justify-center items-center">
+          <button class="border-2">Login</button>
+        </div>
+      </div>
+      <div>
+        New?
+        <a class="text-blue-600" href="/signup">join</a>
+      </div>
     </div>
-</body>
+  </body>
 </html>
