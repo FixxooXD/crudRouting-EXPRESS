@@ -9,53 +9,82 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../src/output.css" />
+    <link rel="stylesheet" href="../assets/index.css" />
 
     <style>
       #tag_line,
       #Name {
         font-family: "Dancing Script", cursive;
       }
-/*
+      /*
       @media only screen and (max-width: 720px) {
         .image_div{
           width: 100%;
         }
     } */
-
     </style>
     <title>Index Page</title>
   </head>
   <body>
     <div class="image_div absolute">
       <img
-        class="w-auto sm:w-screen border-none h-screen"
+        class="w-fit sm:w-screen object-cover object-center border-none h-screen"
         src="../assets/burgir_2.jpg"
         alt=""
       />
     </div>
-    <div id="nav-bar" class="relative flex justify-around pt-4">
-      <div id="Name" class="flex text-white text-5xl w-fit">Fixxoo</div>
-      <div class="flex w-80 justify-around">
-        <div class="text-white">HOME</div>
-        <div class="text-white">MENU</div>
-        <div class="text-white">ABOUT</div>
+    <div
+      id="nav-bar"
+      class="relative flex justify-between sm:justify-around pt-4"
+    >
+      <a href="/" id="Name" class="flex text-white text-5xl w-fit ml-6"
+        >Fixxoo</a
+      >
+      <div class="flex w-80 justify-around hidden sm:flex">
+        <div class="text-white hover:text-amber-500 transition-all">HOME</div>
+        <div class="text-white hover:text-amber-500 transition-all">MENU</div>
+        <div class="text-white hover:text-amber-500 transition-all">ABOUT</div>
       </div>
-      <button class="text-white w-24 h-8 rounded-full bg-amber-500">
-        Login
-      </button>
+      <div
+        class="container sm:hidden relative flex flex-col w-fit mr-6"
+        onclick="myFunction(this)"
+      >
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <a
+        class="text-white flex justify-center items-center w-24 h-8 rounded-full bg-amber-500 hidden sm:flex"
+        href="/login"
+        >Login</a
+      >
     </div>
     <div
       class="main-Container relative flex flex-col items-center justify-center h-screen"
     >
-    <div>
-      <h1 id="tag_line" class="text-6xl text-white">Get the Food You want</h1>
-      <div class="w-1/2 text-white"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maiores error molestiae ex omnis voluptatum delectus, repellendus assumenda, eveniet exercitationem, quo sed doloribus atque voluptates?</p></div>
+      <div>
+        <h1 id="tag_line" class="text-5xl ml-4 sm:text-6xl text-white mb-4">
+          Get the Food You want
+        </h1>
+        <div class="w-1/2 text-white ml-6 mb-4">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+            maiores error molestiae ex omnis voluptatum delectus, repellendus
+            assumenda, eveniet exercitationem, quo sed doloribus atque
+            voluptates?
+          </p>
+        </div>
 
-      <div class="options mt-2 flex">
-        <a class="text-xl px-3 flex bg-amber-500 text-white rounded-full " href="/login">ORDER NOW</a>
-        <!-- <a class="text-xl px-1 ml-1 text-white" href="/signup">getSignUp</a> -->
+        <div class="options mt-2 flex ml-4">
+          <a
+            class="text-xl px-3 flex bg-amber-500 text-white rounded-full"
+            href="/login"
+            >ORDER NOW</a
+          >
+          <!-- <a class="text-xl px-1 ml-1 text-white" href="/signup">getSignUp</a> -->
+        </div>
       </div>
     </div>
-  </div>
+    <div class="2nd_container"></div>
   </body>
 </html>
