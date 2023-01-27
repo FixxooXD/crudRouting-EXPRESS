@@ -26,9 +26,10 @@
     <title>Index Page</title>
   </head>
   <body>
+    <div class="flex flex-col">
     <div class="image_div absolute">
       <img
-        class="w-fit sm:w-screen object-cover object-center border-none h-screen"
+        class="w-fit sm:w-screen object-cover object-center h-screen"
         src="../assets/burgir_2.jpg"
         alt=""
       />
@@ -60,7 +61,7 @@
       >
     </div>
     <div
-      class="main-Container relative flex flex-col items-center justify-center h-screen"
+      class="main-Container relative flex flex-col items-center justify-center"
     >
       <div>
         <h1 id="tag_line" class="text-5xl ml-4 sm:text-6xl text-white mb-4">
@@ -85,6 +86,19 @@
         </div>
       </div>
     </div>
-    <div class="2nd_container"></div>
+    <div class="2nd_container flex flex-row justify-around border-2">
+      <div class="border-2 w-1/2 flex">
+        <img src="../assets/thrusday.jpg" alt="">
+        Tasty Thursday
+      </div>
+      <div class="border-2 w-1/2 flex">
+        <img src="../assets/pizza_day.jpg" alt="">
+        Pizza Days
+      </div>
+      <!-- <div></div>
+      <div></div>
+      <div></div> -->
+    </div>
+  </div>
   </body>
 </html>

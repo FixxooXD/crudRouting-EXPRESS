@@ -9,6 +9,10 @@
   }
 }
 
+.main-Container{
+  height: 92vh;
+}
+
 .bar1,
 .bar2,
 .bar3 {
