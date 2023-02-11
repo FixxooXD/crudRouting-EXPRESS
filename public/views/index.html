@@ -89,19 +89,55 @@
         </div>
       </div>
       <div
-        class="2nd_container flex flex-col sm:flex-row justify-around border-2"
+        class="2nd_container mt-16 flex flex-col sm:flex-row justify-center items-center"
       >
-        <div class="border-2 w-1/2 flex">
-          <img src="../assets/thrusday.jpg" alt="" />
-          Tasty Thursday
+        <div
+          id="thrusday"
+          class="object-cover object-center w-11/12 sm:w-1/3 h-48 flex px-10 sm:mr-4 rounded-lg"
+        >
+          <img
+            class="rounded-full h-40 mt-4 border-4 border-amber-500"
+            src="../assets/thrusday.jpg"
+            alt=""
+          />
+          <div class="mt-8 ml-2">
+            <p class="specialDays text-3xl">Tasty Thursday</p>
+            <p class="specialOffer text-4xl text-white">
+              20% <span class="text-2xl">off</span>
+            </p>
+            <button class="w-32 text-white bg-amber-500 mt-2 h-8 rounded-full">
+              Order Now
+            </button>
+          </div>
         </div>
-        <div class="border-2 w-1/2 flex">
-          <img src="../assets/pizza_day.jpg" alt="" />
-          Pizza Days
+        <div
+          id="pizza_Day"
+          class="object-cover object-center w-11/12 mt-2 sm:mt-0 sm:w-1/3 h-48 flex px-10 sm:ml-4 rounded-lg"
+        >
+          <img
+            class="rounded-full h-40 mt-4 border-4 border-amber-500"
+            src="../assets/pizza_day.jpg"
+            alt=""
+          />
+          <div class="mt-8 ml-2">
+            <p class="specialDays text-3xl">Pizza Days</p>
+            <p class="specialOffer text-4xl text-white">
+              20% <span class="text-2xl">off</span>
+            </p>
+            <button class="w-32 text-white bg-amber-500 mt-2 h-8 rounded-full">
+              Order Now
+            </button>
+          </div>
         </div>
-        <!-- <div></div>
-      <div></div>
-      <div></div> -->
+      </div>
+      <div class="mt-4 flex justify-center items-center">
+        <div class="menu text-5xl">Our Menu</div>
+      </div>
+      <div class="options border-2 flex justify-center items-center">
+        <button>All</button>
+        <button>Burger</button>
+        <button>Pizza</button>
+        <button>Fries</button>
       </div>
     </div>
   </body>
